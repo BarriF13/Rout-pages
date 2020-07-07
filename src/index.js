@@ -49,7 +49,7 @@ const App = () => {
         <Route path="/life"  component={LifeCycle} />
         <Route path="/conditional"  component={Conditional} />
         <Route path="/" exact component={Home} />
-      <Route render={()=> <h3>Oops 404</h3> }/>
+        <Route render={()=> <h3>Oops 404</h3> }/>
         
       </Switch>
       </div>
