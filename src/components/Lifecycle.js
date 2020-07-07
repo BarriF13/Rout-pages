@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+//import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export class LifeCycle extends Component {
+export class LifeCycle extends PureComponent {
 
   // That is what react do step by step
   // 1- get default props
@@ -30,15 +31,23 @@ export class LifeCycle extends Component {
   //   console.log('After update');
   // }
   
-  // //8- for changes of the props and state-- return true or false
-  // // shouldComponentUpdate(nextProps, nextState){
-  // //   console.log(this.state.title);
-  // //   console.log(nextState.title);
-  // //   if(nextState.title === 'Title in the render step 4e'){
-  // //     return false;
-  // //   }
-  // //   return false;
-  // // }
+  //8- for changes of the props and state-- return true or false
+  // shouldComponentUpdate(nextProps, nextState){
+  //   console.log(this.state.title);
+  //   console.log(nextState.title);
+  //   if(nextState.title === 'Title in the render step 4e'){
+  //     return false;
+  //   }
+  //   return false;
+  // }
+  // ---pure component tutorial -- they stop you to reloading if the state is the same
+  // shouldComponentUpdate(nextProps, nextState){
+      
+  //     if(nextState.title === this.state.title){
+  //       return false;
+  //     }
+  //     return true;
+  //   }
    
   // //9- component
   // componentWillReceiveProps(){
