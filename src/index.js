@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link, NavLink} from 'react-router-dom';
+// we have memory router -- which will save everything to memory nothing in browser
+// import { HashRouter, Route, Link } from 'react-router-dom';
 
 //components
 import Home from './components/Home';
 import Profile from './components/Profile';
 import Posts from './components/Posts';
+import PostItem from './components/Post_item';
+
+
 
 
 //Myapp.com/posts
@@ -14,22 +19,28 @@ import Posts from './components/Posts';
 const App = () => {
   return (
     //BrowserRouter is the parent of all routing 
-      <BrowserRouter>
+       <BrowserRouter>
+      {/* <HashRouter> */}
       <header> 
         
-        <Link to="/">HOME </Link><br/>
-        <Link to="/Posts">POSTS </Link><br/>
-        <Link to={{
+        <NavLink to="/">HOME </NavLink><br/>
+
+        <NavLink
+         to="/Posts"
+         activeStyle={{color:'red'}}
+         >POSTS </NavLink><br/>
+
+        <NavLink to={{
           pathname: "/Profile",
-          hash: '#Barri',
-          search: '?profile=true'
-        }}>PROFILE </Link><br/>
+          }}>PROFILE </NavLink><br/>
         <hr/>
          </header>
             <Route path="/" components={Home}/>
-            <Route path="/Posts" component ={ Posts}/>
-            <Route path="/Profile" component ={ Profile}/>
+            <Route path="/posts"  exact component ={ Posts}/>
+            <Route path="/posts/:id/:username" component ={ PostItem}/>
+            <Route path="/profile" component ={ Profile}/>
       </BrowserRouter>
+      /* </HashRouter> */
     
     )
 }
