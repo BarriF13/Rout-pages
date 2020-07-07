@@ -36,13 +36,14 @@ const App = () => {
         <NavLink to={{
           pathname: "/Profile",
         }}>PROFILE </NavLink><br />
-        <NavLink to="/life">Life cycle </NavLink><br />
-        <NavLink to="/conditional">Conditional </NavLink><br />
+     
+        <NavLink to="/life">LIFE CYCLE </NavLink><br />
+        <NavLink to="/conditional">CONDITIONAL </NavLink><br />
         <hr />
       </header>
 
       <Switch>
-        <Redirect from="/profile" to="/"></Redirect>
+        {/* <Redirect from="/profile" to="/"></Redirect> */}
         <Route path="/posts/:id/:username" component={PostItem}/>
         <Route path="/profile" component={Profile} />
         <Route path="/posts"  component={Posts} />
