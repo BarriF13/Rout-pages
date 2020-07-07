@@ -7,12 +7,17 @@ const Conditional =( )=> {
   const returnValue =()=>{
     return false;
   }
+  const showIt =()=> {
+    return(
+      returnValue() ?<div>Hello it's a  true</div>: <div>Oops it's false</div>
+      )
+    }
     return (
       <div>
-        
+        {showIt()}
           {/* { value ?<div>Hello it is true</div>: null } */}
 
-          { returnValue() ?<div>Hello it's a  true</div>: <div>Oops it's false</div> }
+          
         
       </div>
     )
