@@ -28,6 +28,7 @@ const App = () => {
         <NavLink
          to="/Posts"
          activeStyle={{color:'red'}}
+         activeClassName="selected"
          >POSTS </NavLink><br/>
 
         <NavLink to={{
@@ -35,7 +36,7 @@ const App = () => {
           }}>PROFILE </NavLink><br/>
         <hr/>
          </header>
-            <Route path="/" components={Home}/>
+            <Route path="/" exact components={Home}/>
             <Route path="/posts"  exact component ={ Posts}/>
             <Route path="/posts/:id/:username" component ={ PostItem}/>
             <Route path="/profile" component ={ Profile}/>
