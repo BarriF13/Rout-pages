@@ -10,5 +10,13 @@ const User = (props) => {
     </div>
   )
 }
+const User2 = (props) => {
+  console.log(props);
+  return (
+    <div>
+      User 2
+    </div>
+  )
+}
 
-export default userHoc(User, 'Hello');
+export default userHoc(User, User2, 'Hello');
